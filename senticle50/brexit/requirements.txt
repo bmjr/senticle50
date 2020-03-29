@@ -51,7 +51,7 @@ PorterStemmer==0.5
 prompt-toolkit==1.0.15
 protobuf==3.1.0
 proxy==0.0.1
-psutil==5.4.2
+psutil==5.6.6
 psycopg2==2.7.3.2
 ptyprocess==0.5.2
 Pygments==2.2.0
