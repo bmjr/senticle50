@@ -8,7 +8,7 @@
     "d3": "^4.13.0",
     "d3pie": "^0.2.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^1.9.1",
+    "jquery": "^3.4.1",
     "multiple.js": "0.0.1",
     "popper.js": "^1.12.9"
   },
