@@ -1,0 +1,21 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "collection of packages required for site",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "d3": "^4.13.0",
+    "d3pie": "^0.2.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^1.9.1",
+    "multiple.js": "0.0.1",
+    "popper.js": "^1.12.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

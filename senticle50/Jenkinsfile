@@ -1,0 +1,109 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building'
+                dir("brexit") {
+                    script {
+                        def installed = fileExists 'python-virtualenv/bin/activate'
+                        if (!installed) {
+                                echo 'Creating virtual env'
+                                sh 'python3 -m venv python-virtualenv'
+                        }
+                    }
+                    echo 'Installing requirements'
+                    sh '''
+                        . ./python-virtualenv/bin/activate
+                        pip3 install -r requirements.txt
+                        npm i
+                        python brexit/scripts/Setup.py 
+                        deactivate
+                       '''
+
+                    echo 'Building statics'
+                    sh '''
+                        . ./python-virtualenv/bin/activate
+                        python manage.py collectstatic --noinput -c --settings=brexit.settings.production
+                        deactivate
+                       '''
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+                dir("brexit") {
+                    script {
+                        error = null
+                        try {
+                            sh '''
+                                . ./python-virtualenv/bin/activate
+                                pip show django-jenkins
+                                python manage.py jenkins --enable-coverage --coverage-exclude=COVERAGE_EXCLUDE_FOLDERS --settings=brexit.settings.test
+                                ls reports
+                                deactivate
+                               '''
+                        }
+                        catch(err) {
+                            currentBuild.result = 'FAILURE'
+                            error = err
+                        }
+                        finally {
+                            junit 'reports/junit.xml'
+                            if (error) {
+                                throw error
+                            }
+                        }
+                    }
+                }
+                step([
+                    $class: 'CoberturaPublisher', 
+                    autoUpdateHealth: true, 
+                    autoUpdateStability: true, 
+                    coberturaReportFile: '**/coverage.xml', 
+                    failNoReports: true, 
+                    failUnhealthy: false, 
+                    failUnstable: false, 
+                    maxNumberOfBuilds: 0, 
+                    onlyStable: false, 
+                    sourceEncoding: 'UTF_8', 
+                    zoomCoverageChart: true
+                    ])
+                step(
+                    [
+                    $class                     : 'WarningsPublisher',
+                    parserConfigurations       : [[
+                                                          parserName: 'PYLint',
+                                                          pattern   : '**/pylint.report'
+                                                  ],
+                                                  [
+                                                          parserName: 'Coverage',
+                                                          pattern   : '**/coverage.xml'
+                                                  ],[
+                                                          parserName: 'Pep8',
+                                                          pattern   : '**/pep8.report'
+                                                  ]],
+                    unstableTotalAll           : '0',
+                    usePreviousBuildAsReference: true
+                    ]
+                )
+
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+                script {
+                    sshagent (credentials: ['senticle50-ssh']) {
+                    sh '''
+                        rsync -avW --delete-before -e ssh brexit senticle50@165.227.237.73:/webapps/senticle50
+                        ssh -o StrictHostKeyChecking=no -l senticle50 165.227.237.73 'sudo supervisorctl restart brexit'
+			            ssh -o StrictHostKeyChecking=no -l senticle50 165.227.237.73 'sudo supervisorctl restart senticle50-celery'
+                       '''
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+\documentclass[11pt]{report}
+\usepackage[parfill]{parskip}
+
+\begin{document}
+\section*{Brexit Visualizer Specification}
+\subsection*{Product Functions}
+The System must be able to visually display the semantic views of the public on the topic of "Britain leaving the European Union".
+
+The System must display the tweets for which it has stored.
+
+The System must display the tweets against which it has made classifications.
+\subsection*{User Classes and Characteristics}
+
+General User: An individual who wishes to inspect the visual analysis that the system has computed. This user is encompasses all the possible characteristics of a miscellaneous member of the general public wishing to engage with the system.
+
+\subsection*{Operating Environment}
+The System will operate on a remote virtual private server. The server’s operating system will be an Ubuntu Linux Distribution. 
+
+\subsection*{Design and Implementation Constraints}
+The main constraint and limitation factor of the System development will be from the system interfacing with the api of the Real Time Classification Framework. All data which is available to the Visualizer System is provided by the Real Time Classification Framework and thus is a constraint on what can be designed and developed.
+
+\subsection*{User Documentation}
+<List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.>
+
+\subsection*{Dependencies}
+The System will require an interface to the real time classification framework as specified in pg.X Real Time Classification Framework Specification.
+
+\section*{External Interface Requirements}
+\subsection*{Interfaces}
+<Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.>
+\subsection*{Hardware Interfaces}
+The System’s will be developed using a “Mobile First” approach and will therefore support all common device types from small constrained screen size devices such as mobile up to larger desktops.
+
+\subsection*{Software Interfaces}
+<Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.>
+\subsection*{Communications Interfaces}
+<Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.>
+\section*{System Features}
+Below a number of features and their associated priorities are stated, for each feature it’s reflective priority is how essential it is within the execution and delivery of the system.
+
+\subsection*{Stance Sentiment}
+\subsubsection*{Description and Priority}
+High Priority: The System must semantically classify the sentiment of a tweet being in favour (leave) or against (remain) Britain Leaving the European union and display the resulting classifications in a visually pleasing format
+\subsubsection*{Stimulus/Response Sequences}
+a user can visit the Brexit Stance subsection of the website and view the analysis that has been conducted on tweets regarding their Brexit Stance classification.
+\subsubsection*{Functional Requirements}
+REQ-1:	The System must display the analysis conducted on the stored tweets and their Brexit stance classification.
+
+REQ-2: The System must display the number of classifications made for Leave and Remain.
+
+REQ-3: The System must display Brexit stance classifications in day/week/month and year time unit periods.
+	
+\subsection*{Sentiment Polarity}
+\subsubsection*{Description and Priority}
+High Priority: The System must semantically classify the sentiment of a tweet being positive or negative regarding Britain Leaving the European union and display the resulting classifications in a visually pleasing format
+\subsubsection*{Stimulus/Response Sequences}
+a user can visit the Sentiment subsection of the website and view the analysis that has been conducted on tweets regarding their sentiment polarity.
+\subsubsection*{Functional Requirements}
+REQ-1:	The System must display the analysis conducted on the stored tweets and their sentiment polarity classification.
+
+REQ-2: The System must display the number of classifications made for Positive and Negative.
+
+REQ-3: The System must display sentiment polarity classifications in day/week/month and year time unit periods.
+
+\subsection*{Data Transparency}
+\subsubsection*{Description and Priority}
+High Priority: The System must display the tweets that it has collected and the classifications which it has computed against them.
+\subsubsection*{Stimulus/Response Sequences}
+a user can visit the data section of the website and view each of the tweets the system has collected and view classifications against the tweets.
+\subsubsection*{Functional Requirements}
+REQ-1: The System must display all Tweets that it has collected.
+
+REQ-2: The System must provide a means of visually querying the tweets it has collected.
+
+REQ-3:	The System must display the associated classifications made against all tweets.
+
+\section*{Other Nonfunctional Requirements}
+
+\subsection*{Performance Requirements}
+REQ-1: The System must display tweets that it has stored . 
+
+REQ-2: The System must respond to HTTP Requests within 5 seconds.
+
+\subsection*{Security Requirements}
+The System will source its tweet data from the set of tweets which are publicly available or were publicly available at time of collection and thus the System abides by the twitter terms of service. However, to ensure the System has the upmost ethical grounds the System can give the option to allow users who the System has collected tweets from to delete their data.
+
+REQ-1: The System must allow users from which their tweet data has been collected to remove their data from storage.
+
+\subsection*{Software Quality Attributes}
+REQ-1: The System must work across common browsers e.g. Safari, Chrome, Firefox and Opera.
+
+REQ-2: The System must be intuitive to use and navigate by a general public user with little to no technical experience.
+
+REQ-3: The System should be reliably up and operating (and only down for when a new version is being deployed).
+
+
+
+
+
+
+
+
+
+\subsection*{4. Stance Sentiment}
+\subsubsection*{Description and Priority}
+High Priority: The System must display the resulting classifications from the brexit stance analysis of a tweet being n favour (leave) or against (remain)  Britain Leaving the European union.
+
+\subsubsection*{Stimulus/Response Sequences}
+a user can visit the brexit stance analysis subsection of the website and view the analysis that has been conducted on tweets regarding their brexit stance classification.
+\subsubsection*{Functional Requirements}
+REQ-4.1:	The System must display the analysis conducted on the stored tweets and their Brexit stance classification.
+
+REQ-4.2: The System must display the number of classifications made for Leave and Remain.
+
+REQ-4.3: The System must display Brexit stance classifications in day/week/month and year time unit periods.
+
+\subsection*{5. Sentiment Polarity}
+\subsubsection*{Description and Priority}
+High Priority: The System must display the resulting classifications from the semantic polarity analysis of a tweet being positive or negative regarding Britain Leaving the European union.
+\subsubsection*{Stimulus/Response Sequences}
+a user can visit the sentiment polarity analysis subsection of the website and view the analysis
+that has been conducted on tweets regarding their sentiment polarity.
+\subsubsection*{Functional Requirements}
+REQ-5.1: The System must display the analysis conducted on the stored tweets and their sentiment polarity classification.
+
+REQ-5.2: The System must display the number of classications made for Positive and Negative.
+
+REQ-5.3: The System must display sentiment polarity classications in day/week/month and year time unit periods.
+
+\end{document}

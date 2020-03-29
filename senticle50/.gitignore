@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.pyc
+*.cache/
+# PROJECT DEPENDENT
+brexit/brexit/settings/production.py
+scraper/checkConnection.py
+*.DS_Store
+*.idea
+*db.sqlite3
+inspection/*
+*/reports/*
+brexit/static/*
+*/node_modules/*
+*.csv

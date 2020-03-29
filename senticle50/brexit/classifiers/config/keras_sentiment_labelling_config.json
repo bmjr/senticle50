@@ -1,0 +1,24 @@
+{
+  "name":"Brexit Sentiment Labelling Config",
+  "classifier_name": "KerasClassifier",
+  "tweet_type": "tokenized",
+  "model": {
+    "model_json": "sentiment_keras_model.json",
+    "model_weights_json": "sentiment_keras_weights.h5",
+    "tokenizer_pickle": "sentiment_tokenizer.pickle"
+  },
+  "classification_type": 6,
+  "labels": [
+    {
+      "name": "Remain",
+      "classification_value": 0
+    },
+    {
+      "name": "Leave",
+      "classification_value": 1
+    }
+  ],
+  "is_training": 0,
+  "order_of_application": 0,
+  "is_real_time": 1
+}

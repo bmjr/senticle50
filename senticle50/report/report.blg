@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: report.aux
+The style file: agsm.bst
+Database file #1: references/refbiblatex.bib
+Warning--I didn't find a database entry for ""
+You've used 29 entries,
+            2909 wiz_defined-function locations,
+            818 strings with 11647 characters,
+and the built_in function-call counts, 125666 in all, are:
+= -- 20381
+> -- 1803
+< -- 2
++ -- 9684
+- -- 546
+* -- 10849
+:= -- 25078
+add.period$ -- 29
+call.type$ -- 29
+change.case$ -- 405
+chr.to.int$ -- 29
+cite$ -- 29
+duplicate$ -- 540
+empty$ -- 1054
+format.name$ -- 669
+if$ -- 22722
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 28
+newline$ -- 90
+num.names$ -- 303
+pop$ -- 144
+preamble$ -- 1
+purify$ -- 435
+quote$ -- 0
+skip$ -- 482
+stack$ -- 0
+substring$ -- 28613
+swap$ -- 130
+text.length$ -- 408
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 114
+warning$ -- 0
+while$ -- 655
+width$ -- 0
+write$ -- 409
+(There was 1 warning)

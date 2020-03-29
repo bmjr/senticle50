@@ -1,0 +1,43 @@
+\documentclass[11pt]{report}
+\usepackage{standalone}
+\graphicspath{ {images/} }
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\usepackage{natbib}
+\usepackage{bibentry}
+\bibliographystyle{agsm}
+\usepackage{etoolbox}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.25em}
+\usepackage[raggedright]{titlesec}
+\usepackage{hyperref}
+\usepackage{capt-of}
+\patchcmd{\bibliography}{\section*}{\section}{}{}
+\titlespacing*{\chapter}{0pt}{-40pt}{10pt}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter}{15pt}{}
+\usepackage{rotating}
+\usepackage[titletoc]{appendix}
+\usepackage{pgfgantt}
+\usepackage{graphicx, rotating, caption, lscape, threeparttable}% \usepackage{amsmath}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[bottom]{footmisc}
+
+
+\begin{document}
+\section*{Appendix B. File Structure}
+The zip file submitted as fulfilment of this project contains the git-repository, and the report PDF that you are currently reading.Within the \texttt{git-repository/} folder there is the system contained in the \texttt{brexit/} folder and the files which make up the report in the \texttt{report/} folder.
+\section*{Appendix C. System Usage}
+The System uses an AWS database which is currently under paid subscription so as a measure of restricting usage of this, the access to the System has been restricted and thus \textbf{viewing the System must occur via UoBWifi or eduroam wifi connection}.
+\\
+
+System URL: http://www.senticle50.co.uk/
+
+Jenkins URL: http://www.senticle50.co.uk:8080/
+\\
+
+For running the system locally see ReadMe.md contained within the \texttt{git-repository/} folder.
+\end{document}

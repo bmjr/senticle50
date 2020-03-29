@@ -1,0 +1,47 @@
+\documentclass[11pt]{report}
+\usepackage{etoolbox}
+\usepackage{epigraph}
+
+\setlength\epigraphwidth{\textwidth}
+\setlength\epigraphrule{0pt}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+
+\begin{document}
+  
+\section{Problem}
+For long, as individuals we have chosen to express our beliefs and experiences through the medium of written word. Within recent years social media has become ubiquitous in our daily lives, and with that has become a growing trend to share our thoughts in online \textit{posts}. The Question arises then on whether sentiment analysis of \textit{posts such as tweets} can be used to provide a clearer understanding of what sentiment is expressed within a domain context such as the political area of debate regarding  ``Britain Leaving the European Union'' via Twitter. More specifically the problem for which this report aims to tackle is whether the sub-tasks of classifying sentiment can be automated and combined with visualization to form a system that can computationally analyse the sentiment of a domain context within real-time.
+ 
+\section{Context}
+Despite the act of Britain voting to leave the European Union dating back almost two years at publishing date of this report, it remains a hot topic in the forum of online social media. Discussions have now turned towards the opinion on the execution of Article 50 during the negotiation period that Britain currently finds itself in. Online discourse regarding ``Britain Leaving the European Union'' (also referred to as Brexit) has been and will continue to be a rich source of public opinion and as a consequence solidifies the grounds for extracting sentiment on the matter of which this report goes on to discuss.
+
+\clearpage
+\section{Overview}
+\subsection*{Project Scope}
+The work as outlined by this Report first and foremost provides a software system that can be used to extract and visualize the sentiment of tweets within real time. Secondly, it builds on existing work regarding the case study of "Britain leaving the European Union" using tweets belonging to the wider discussion of the topic. Through practical application of the system using the case study as mentioned the by-products have been further work into investigating to what extent sentiment analysis can be used as a method for political social media opinion mining and new insights into general public consensus on "Britain Leaving the European Union" since the EU Referendum public vote.
+
+\subsection*{Report}
+The following sections of the report detail the system and the rationale behind the design, implementation and evaluation of this class of system. To summarize the report will proceed as follows:
+
+\begin{itemize}
+
+\item Related Work - Summary of existing work within the domain area's for which this unit of work explores.
+
+\item Analysis - The analysis of the problem that was undertaken consisting of a system specification and requirements of the system.
+
+\item Design - The rationale behind the architecture of the system and the visual stimuli for which the user interfaces with the system.
+
+\item Project Management - The techniques utilized in managing the development and execution of the project.
+
+\item Implementation - How the solution operates, the application programming interfaces used and a summary of the technology required.
+
+\item Experiments and Testing - a report of the testing carried out as part of the System's development.
+
+\item Discussion - Qualitative and quantitative review of the System, it's performance and proposed future extensions.
+
+\item Conclusion - Summary of the work outlined in this report.
+\end{itemize}
+
+\end{document}

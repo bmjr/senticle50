@@ -1,0 +1,176 @@
+\begin{thebibliography}{xx}
+
+\harvarditem[{Andreas Jungherr} et~al.]{{Andreas Jungherr}, {Pascal
+  J{\"u}rgens} \harvardand\ {Harald Schoen}}{2012}{andreas_jungherr_why_2012}
+{Andreas Jungherr}, {Pascal J{\"u}rgens} \harvardand\ {Harald Schoen}
+  \harvardyearleft 2012\harvardyearright , `Why the {{Pirate Party Won}} the
+  {{German Election}} of 2009 or {{The Trouble With Predictions}}: {{A
+  Response}} to {{Tumasjan}}, {{A}}., {{Sprenger}}, {{T}}. {{O}}., {{Sander}},
+  {{P}}. {{G}}., \& {{Welpe}}, {{I}}. {{M}}. ``{{Predicting Elections With
+  Twitter}}: {{What}} 140 {{Characters Reveal About Political Sentiment}}''',
+  {\em Social Science Computer Review} {\bf 30}(2),~229--234.
+
+\harvarditem[Bollen et~al.]{Bollen, Pepe \harvardand\
+  Mao}{2009}{bollen_modeling_2009}
+Bollen, J., Pepe, A. \harvardand\ Mao, H.  \harvardyearleft
+  2009\harvardyearright , `Modeling public mood and emotion: {{Twitter}}
+  sentiment and socio-economic phenomena', {\em arXiv:0911.1583 [cs]} .
+
+\harvarditem[Cambria et~al.]{Cambria, Schuller, Xia \harvardand\
+  Havasi}{2013}{cambria_new_2013}
+Cambria, E., Schuller, B., Xia, Y. \harvardand\ Havasi, C.  \harvardyearleft
+  2013\harvardyearright , `New {{Avenues}} in {{Opinion Mining}} and
+  {{Sentiment Analysis}}', {\em IEEE Intelligent Systems} {\bf 28}(2),~15--21.
+
+\harvarditem[Cho et~al.]{Cho, Kim, Lee \harvardand\
+  Lee}{2014}{cho_data-driven_2014}
+Cho, H., Kim, S., Lee, J. \harvardand\ Lee, J.-S.  \harvardyearleft
+  2014\harvardyearright , `Data-driven integration of multiple sentiment
+  dictionaries for lexicon-based sentiment classification of product reviews',
+  {\em Knowledge-Based Systems} {\bf 71}(Supplement C),~61--71.
+
+\harvarditem{Esuli \harvardand\ Sebastiani}{2006}{esuli_sentiwordnet:_2006}
+Esuli, A. \harvardand\ Sebastiani, F.  \harvardyearleft 2006\harvardyearright ,
+  {{SENTIWORDNET}}: {{A Publicly Available Lexical Resource}} for {{Opinion
+  Mining}}, {\em in} `In {{Proceedings}} of the 5th {{Conference}} on
+  {{Language Resources}} and {{Evaluation}} ({{LREC}}'06', pp.~417--422.
+
+\harvarditem{Hu \harvardand\ Liu}{2004}{hu_mining_2004}
+Hu, M. \harvardand\ Liu, B.  \harvardyearleft 2004\harvardyearright , Mining
+  and {{Summarizing Customer Reviews}}, {\em in} `Proceedings of the {{Tenth
+  ACM SIGKDD International Conference}} on {{Knowledge Discovery}} and {{Data
+  Mining}}', KDD '04, {ACM}, New York, NY, USA, pp.~168--177.
+
+\harvarditem[Jansen et~al.]{Jansen, Zhang, Sobel \harvardand\
+  Chowdury}{2009}{jansen_twitter_2009}
+Jansen, B.~J., Zhang, M., Sobel, K. \harvardand\ Chowdury, A.  \harvardyearleft
+  2009\harvardyearright , `Twitter {{Power}}: {{Tweets As Electronic Word}} of
+  {{Mouth}}', {\em J. Am. Soc. Inf. Sci. Technol.} {\bf 60}(11),~2169--2188.
+
+\harvarditem{Jensen \harvardand\ Anstead}{2013}{jensen_psephological_2013}
+Jensen, M.~J. \harvardand\ Anstead, N.  \harvardyearleft 2013\harvardyearright
+  , `Psephological investigations: {{Tweets}}, votes, and unknown unknowns in
+  the republican nomination process', {\em Policy \& Internet} {\bf
+  5}(2),~161--182.
+
+\harvarditem{Jonathon \harvardand\ Read}{2005}{jonathon_using_2005}
+Jonathon \harvardand\ Read  \harvardyearleft 2005\harvardyearright , `Using
+  {{Emoticons}} to reduce {{Dependency}} in {{Machine Learning Techniques}} for
+  {{Sentiment Classification}}', {\em Microsoft Research} .
+
+\harvarditem{Llewellyn \harvardand\ Cram}{2016}{llewellyn_brexit?_2016}
+Llewellyn, C. \harvardand\ Cram, L.  \harvardyearleft 2016\harvardyearright ,
+  `Brexit? {{Analyzing Opinion}} on the {{UK}}-{{EU Referendum}} within
+  {{Twitter}}'.
+
+\harvarditem{Matsuo \harvardand\ Benoit}{2017}{matsuo_more_2017}
+Matsuo, A. \harvardand\ Benoit, K.  \harvardyearleft 2017\harvardyearright ,
+  `More positive, assertive and forward-looking: How {{Leave}} won
+  {{Twitter}}'.
+
+\harvarditem[Maynard et~al.]{Maynard, Roberts, Greenwood, Rout \harvardand\
+  Bontcheva}{2017}{maynard_framework_2017}
+Maynard, D., Roberts, I., Greenwood, M.~A., Rout, D. \harvardand\ Bontcheva, K.
+   \harvardyearleft 2017\harvardyearright , `A framework for real-time semantic
+  social media analysis', {\em Web Semantics: Science, Services and Agents on
+  the World Wide Web} {\bf 44}(Supplement C),~75--88.
+
+\harvarditem[Mohammad et~al.]{Mohammad, Dunne \harvardand\
+  Dorr}{2009}{mohammad_generating_2009}
+Mohammad, S., Dunne, C. \harvardand\ Dorr, B.  \harvardyearleft
+  2009\harvardyearright , Generating {{High}}-coverage {{Semantic Orientation
+  Lexicons}} from {{Overtly Marked Words}} and a {{Thesaurus}}, {\em in}
+  `Proceedings of the 2009 {{Conference}} on {{Empirical Methods}} in {{Natural
+  Language Processing}}: {{Volume}} 2 - {{Volume}} 2', EMNLP '09, {Association
+  for Computational Linguistics}, Stroudsburg, PA, USA, pp.~599--608.
+
+\harvarditem[Morinaga et~al.]{Morinaga, Yamanishi, Tateishi \harvardand\
+  Fukushima}{2002}{morinaga_mining_2002}
+Morinaga, S., Yamanishi, K., Tateishi, K. \harvardand\ Fukushima, T.
+  \harvardyearleft 2002\harvardyearright , Mining {{Product Reputations}} on
+  the {{Web}}, {\em in} `Proceedings of the {{Eighth ACM SIGKDD International
+  Conference}} on {{Knowledge Discovery}} and {{Data Mining}}', KDD '02, {ACM},
+  New York, NY, USA, pp.~341--349.
+
+\harvarditem{Pak \harvardand\ Paroubek}{2010}{pak_twitter_2010}
+Pak, A. \harvardand\ Paroubek, P.  \harvardyearleft 2010\harvardyearright ,
+  Twitter as a {{Corpus}} for {{Sentiment Analysis}} and {{Opinion Mining}},
+  {\em in} `Proceedings of {{LREC}}', Vol.~10.
+
+\harvarditem{Pennacchiotti \harvardand\
+  Popescu}{2011}{pennacchiotti_machine_2011}
+Pennacchiotti, M. \harvardand\ Popescu, A.-M.  \harvardyearleft
+  2011\harvardyearright , A {{Machine Learning Approach}} to {{Twitter User
+  Classification}}, {\em in} `{{ICWSM}}', Vol.~11.
+
+\harvarditem{Pepe \harvardand\ Bollen}{2008}{pepe_between_2008}
+Pepe, A. \harvardand\ Bollen, J.  \harvardyearleft 2008\harvardyearright ,
+  `Between conjecture and memento: Shaping a collective emotional perception of
+  the future', {\em arXiv:0801.3864 [cs]} .
+
+\harvarditem[Piryani et~al.]{Piryani, Madhavi \harvardand\
+  Singh}{2016}{piryani_analytical_2016}
+Piryani, R., Madhavi, D. \harvardand\ Singh, V.  \harvardyearleft
+  2016\harvardyearright , `Analytical mapping of opinion mining and sentiment
+  analysis research during 2000\textendash{}2015', {\em Information Processing
+  \& Management} {\bf 53}.
+
+\harvarditem{Popescu \harvardand\ Etzioni}{2005}{popescu_extracting_2005}
+Popescu, A.-M. \harvardand\ Etzioni, O.  \harvardyearleft 2005\harvardyearright
+  , Extracting {{Product Features}} and {{Opinions}} from {{Reviews}}, {\em in}
+  `Proceedings of the {{Conference}} on {{Human Language Technology}} and
+  {{Empirical Methods}} in {{Natural Language Processing}}', HLT '05,
+  {Association for Computational Linguistics}, Stroudsburg, PA, USA,
+  pp.~339--346.
+
+\harvarditem{Porcaro \harvardand\ M{\"u}ller}{2016}{porcaro_tweeting_2016}
+Porcaro, G. \harvardand\ M{\"u}ller, H.  \harvardyearleft 2016\harvardyearright
+  , `Tweeting {{Brexit}}: {{Narrative}} building and sentiment analysis |
+  {{Bruegel}}'.
+
+\harvarditem{Read \harvardand\ Carroll}{2009}{read_weakly_2009}
+Read, J. \harvardand\ Carroll, J.  \harvardyearleft 2009\harvardyearright ,
+  Weakly {{Supervised Techniques}} for {{Domain}}-independent {{Sentiment
+  Classification}}, {\em in} `Proceedings of the 1st {{International CIKM
+  Workshop}} on {{Topic}}-Sentiment {{Analysis}} for {{Mass Opinion}}', TSA
+  '09, {ACM}, New York, NY, USA, pp.~45--52.
+
+\harvarditem{Stone \harvardand\ Hunt}{1963}{stone_computer_1963}
+Stone, P.~J. \harvardand\ Hunt, E.~B.  \harvardyearleft 1963\harvardyearright ,
+  A {{Computer Approach}} to {{Content Analysis}}: {{Studies Using}} the
+  {{General Inquirer System}}, {\em in} `Proceedings of the {{May}} 21-23,
+  1963, {{Spring Joint Computer Conference}}', AFIPS '63 (Spring), {ACM}, New
+  York, NY, USA, pp.~241--256.
+
+\harvarditem[Taboada et~al.]{Taboada, Brooke, Tofiloski, Voll \harvardand\
+  Stede}{2011}{taboada_lexicon-based_2011}
+Taboada, M., Brooke, J., Tofiloski, M., Voll, K. \harvardand\ Stede, M.
+  \harvardyearleft 2011\harvardyearright , `Lexicon-based {{Methods}} for
+  {{Sentiment Analysis}}', {\em Comput. Linguist.} {\bf 37}(2),~267--307.
+
+\harvarditem[Tumasjan et~al.]{Tumasjan, Sprenger, Sandner \harvardand\
+  Welpe}{2010}{tumasjan_predicting_2010}
+Tumasjan, A., Sprenger, T.~O., Sandner, P.~G. \harvardand\ Welpe, I.~M.
+  \harvardyearleft 2010\harvardyearright , Predicting {{Elections}} with
+  {{Twitter}}: {{What}} 140 {{Characters Reveal}} about {{Political
+  Sentiment}}, {\em in} `Fourth {{International AAAI Conference}} on
+  {{Weblogs}} and {{Social Media}}'.
+
+\harvarditem{Turney}{2002}{turney_thumbs_2002}
+Turney, P.~D.  \harvardyearleft 2002\harvardyearright , Thumbs {{Up}} or
+  {{Thumbs Down}}?: {{Semantic Orientation Applied}} to {{Unsupervised
+  Classification}} of {{Reviews}}, {\em in} `Proceedings of the 40th {{Annual
+  Meeting}} on {{Association}} for {{Computational Linguistics}}', ACL '02,
+  {Association for Computational Linguistics}, Stroudsburg, PA, USA,
+  pp.~417--424.
+
+\harvarditem[Wu et~al.]{Wu, Wong, Deng \harvardand\
+  Chang}{2011}{wu_exploration_2011}
+Wu, Y., Wong, J., Deng, Y. \harvardand\ Chang, K.  \harvardyearleft
+  2011\harvardyearright , An {{Exploration}} of {{Social Media}} in {{Public
+  Opinion Convergence}}: {{Elaboration Likelihood}} and {{Semantic Networks}}
+  on {{Political Events}}, {\em in} `2011 {{IEEE Ninth International
+  Conference}} on {{Dependable}}, {{Autonomic}} and {{Secure Computing}}',
+  pp.~903--910.
+
+\end{thebibliography}

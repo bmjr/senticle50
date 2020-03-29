@@ -1,0 +1,20 @@
+{
+  "name":"Brexit Stance Labelling Config",
+  "classifier_name": "StringEndClassifier",
+  "model": "re",
+  "tweet_type": "unprocessed",
+  "classification_type": 5,
+  "labels": [
+    {
+      "name": "Leave",
+      "classification_value": 0,
+      "strings_to_match": ["#VoteLeave", "#LeaveEU"]
+    },
+    {
+      "name": "Remain",
+      "classification_value": 1,
+      "strings_to_match": ["#StrongerIn", "#VoteRemain"]
+    }
+  ],
+  "is_training": 1
+}

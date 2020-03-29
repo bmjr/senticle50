@@ -1,0 +1,30 @@
+{% extends 'core/index.html' %}
+{% load static from staticfiles %}
+{% block styles %}
+<link rel="stylesheet" type="text/css"
+          href="{% static 'core/css/home.css' %}"/>
+<script src="{% static 'core/js/wlcm.js' %}"></script>
+{% endblock %}
+{% block body %}
+<div class="jumbotron">
+    <div><h2>Twitter through the Looking Glass:</h2>
+        <h3>Brexit, Negotiations and Post-Referendum Discourse</h3>
+    </div>
+    <br>
+    <p class="lead">Take a deep dive into twitter sentiment on
+        Britain's vow to leave the European union post referendum
+        results.
+    </p>
+    <section id="magnifying-glass"></section>
+    <script>
+        scrolling_tweets = document.getElementById("magnifying-glass");
+
+        scrolling_tweets.wlcm({
+            "words": {{tweets | safe}}
+        });
+    </script>
+    <br><br>
+    <p><a class="btn btn-lg info-button" href="{% url 'core:about' %}"
+          role="button">Learn more</a></p>
+</div>
+{% endblock %}

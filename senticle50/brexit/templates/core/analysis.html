@@ -1,0 +1,32 @@
+{% extends 'core/index.html' %}
+{% load app_filters %}
+{% load static from staticfiles %}
+{% block styles %}
+<link rel="stylesheet" type="text/css"
+          href="{% static 'core/css/analysis.css' %}"/>
+<script src="http://d3js.org/d3.v3.js"></script>
+{% endblock %}
+{% block body %}
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <div><h2>ANALYSIS</h2></div>
+</div>
+{% for row in rows %}
+{% with row|row_size as columns %}
+<div class="row row-eq-height" style="margin-top:-25px;">
+    {% for item in row %}
+    <div class="col-md-{{columns}} d-flex align-items-stretch">
+        <div class="card text-center" style="margin-top:20px;">
+            <div class="card-body">
+            <h3 class="card-title">{{item.title}}</h3>
+            <div class="card-text text-left">{{item.text | safe}}</div>
+            </div>
+            <a class="align-self-center align-self-end btn btn-outline-primary" href="analysis/{{item.name}}/day?time_period={{current_date}}">View Analysis</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+{% endwith %}
+{% endfor %}
+{% endblock %}

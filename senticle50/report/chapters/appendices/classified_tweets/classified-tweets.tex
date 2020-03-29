@@ -1,0 +1,86 @@
+\documentclass[11pt]{report}
+\usepackage{standalone}
+\graphicspath{ {images/} }
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\usepackage{natbib}
+\usepackage{bibentry}
+\bibliographystyle{agsm}
+\usepackage{etoolbox}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.25em}
+\usepackage[raggedright]{titlesec}
+\usepackage{hyperref}
+\usepackage{capt-of}
+\patchcmd{\bibliography}{\section*}{\section}{}{}
+\titlespacing*{\chapter}{0pt}{-40pt}{10pt}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter}{15pt}{}
+\usepackage{rotating}
+\usepackage[titletoc]{appendix}
+\usepackage{pgfgantt}
+\usepackage{graphicx, rotating, caption, lscape, threeparttable}% \usepackage{amsmath}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[bottom]{footmisc}
+
+
+\begin{document}
+\section*{Appendix A. System Classified Tweets}
+
+\subsection*{Correctly Classified Brexit Tweets}
+
+\subsubsection*{Tweets Classified Leave}
+-- ``Out of sheer envy the EU mandated that we pay \pounds1.7bn worth of contributions in 2014 wishing to free-load on our economic success. After all we procure goods from them. Now they set a figure within the region of \pounds40bn. What justifies this farcical calculation \#Brexit''
+
+-- ``Get over it, we're on our way out \#Brexit''
+
+\subsubsection*{Tweets Classified Remain}
+-- ``How much of a hit to the economy would you take to prevent foreigners coming to the UK? \#Remain''
+
+--``The economic and political cost of UK austerity \#Brexit \#FBPE \#StopBrexitSaveBritain \#FinalSay http://bit.ly/2FQhHwo''
+\subsection*{Incorrectly Classified Brexit Tweets}
+
+\subsubsection*{Tweets Classified Leave}
+--``Yeah, \#Brexit .....because it's so much easier to negotiate trade deals with big powerful countries when you're not part of a powerhouse trading block! Oh, wait....''
+
+\subsubsection*{Tweets Classified Remain}
+--``Brexit is 9527 hours away. \#brexit''
+
+-- ``Die hard \#Brexit''
+
+\subsection*{Correctly Classified Sentiment Tweets}
+
+\subsubsection*{Tweets Classified Positive}
+-- ``This is an interesting point. First of all, we need another election, and soon. Then maybe we can get to where \#Brexit can be re-considered.''
+
+-- ``Looking forward to see what last-minute deal the UK will offer the Republic not to veto its \#Brexit negotiations with the EU. Any offer they make will be of great interest, especially in the instance Scotland revisits the question of whether it wants to be independent again.''
+
+\subsubsection*{Tweets Classified Negative}
+-- ``Angela Merkel's open-door policy CAUSED the migrant crisis led to \#brexit in \#eu , furious George Soros blasts http://shr.gs/suCTcuW''
+
+-- ``It has been said that you should, "Never trust a Tory." So why should it be any different during the Brexit negotiations? \#BrexitMeansBrexit \#BrexitPerversion \#Brexit \#MayMustGo https://youtu.be/CZ4lhmARnCc''
+
+\subsection*{Incorrectly Classified Sentiment Tweets}
+
+\subsubsection*{Tweets Classified Positive}
+-- ``Stop being so negative. Get behind \#brexit and be positive. You're ignoring the will of the people. They elected May and Tories. You're an A Grade Bremoaner''
+
+-- ``No. That's precisely the point. That's the deception here. It's totally and utterly clear that \#Corbyn is a \#Brexiter and that he and @UK Labour WILL deliver \#Brexit come what may. He has said so - repeatedly. There will be no u-turn. That's why it's \#Remain OR \#Labour''
+
+\subsubsection*{Tweets Classified Negative}
+-- ``RT @conorwells0: A Huge Thank you to everyone for their superb and supportive comments since I switched from Leave to Remain, we must fight...''
+
+--``@David\textunderscore Cameron Put this poster in your window and send local politicians a message. \#Brexit https://t.co/6cxCsZKhSv''
+
+
+\subsection*{Off Discussion Topic Tweets}
+-- ``How the NRA uses an app to organize opposition to gun control via @Salon \#Brexit \#StopBrexit https://buff.ly/2CjFXs8''
+
+-- ``Greece needs capital, ingenious Irish biscuits and mince pies. \#ExportOpps \#TakeBackControl''
+
+--`\#ButHerEmails -> WAR \#RussiaGate \#Assange \#Putin \#InfoWars \#Trump \#Breitbart \#AlexJones \#Murdoch \#Mercer \#Brexit \#Milo \#Forage Alt-right https:// twitter.com/angryblacklady /status/895279622983516160 …''
+
+\end{document}

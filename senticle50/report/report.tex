@@ -1,0 +1,118 @@
+\documentclass[11pt]{report}
+\usepackage{standalone}
+\graphicspath{ {images/} }
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\usepackage{natbib}
+\usepackage{bibentry}
+\bibliographystyle{agsm}
+\usepackage{etoolbox}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.25em}
+\usepackage[raggedright]{titlesec}
+\usepackage{hyperref}
+\usepackage{capt-of}
+\patchcmd{\bibliography}{\section*}{\section}{}{}
+\titlespacing*{\chapter}{0pt}{-40pt}{10pt}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter}{15pt}{}
+\usepackage{rotating}
+\usepackage[titletoc]{appendix}
+\usepackage{pgfgantt}
+\usepackage{graphicx, rotating, caption, lscape, threeparttable}% \usepackage{amsmath}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[bottom]{footmisc}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{textcomp}
+\usepackage{etoolbox}
+\usepackage{epigraph}
+
+\setlength\epigraphwidth{11cm}
+\setlength\epigraphrule{0pt}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+
+
+
+  
+\begin{document}
+\input{chapters/title_page/titlepage.tex}
+
+\clearpage
+\chapter*{\centerline{Preamble}}
+\addcontentsline{toc}{chapter}{Preamble}
+\vspace{1cm}
+
+\section*{\centering Abstract}
+\addcontentsline{toc}{section}{Abstract}
+Political Opinion; traditionally extrapolated from polling data has since seen a developing trend into the utilisation of sentiment analysis on freely available social media data as a means of gaining further opinion insights. This paper draws on the previous work into political analysis via statistical sentiment extraction and henceforth investigates whether `we can implement an autonomous system to extract and visualise public sentiment from Tweets within sufficient real time'. Using user posted twitter data on the discussion of `Britain leaving the European Union' as a case study pertinent to the question posed. Previous work into the extraction of political opinion via Twitter have failed to utilise the power of Neural Networks as deep learning tools to aid in the extraction of contextual sentiment. Furthermore, in the case study of `Britain Leaving the European Union' previous systems have trivially extracted sentiment by not using Neural Networks and have thus failed to acknowledge the importance of ``context'' within a domain specific text like online political discourse. 
+
+\vspace{0.5cm}
+\begin{center}
+\section*{\centering Git Repository}
+\addcontentsline{toc}{section}{Git Repository}
+All Software and Documentation within this Report can be found at: \\
+\medskip
+\href{https://git-teaching.cs.bham.ac.uk/mod-ug-proj-2017/bmr455/}{https://git-teaching.cs.bham.ac.uk/mod-ug-proj-2017/bmr455/}
+\end{center}
+
+\vspace{0.5cm}
+\section*{\centering Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+I would like to express a token of appreciation to my supervisor Dr.\ Phillip Smith, for his guidance and support within the development of the project. His   supervisory time and passion for the subject influenced the outcome of the project significantly and for that I am especially grateful. 
+\clearpage
+\tableofcontents
+
+
+
+
+
+\chapter{Introduction}
+\input{chapters/introduction/introduction.tex}
+
+\input{chapters/related_work/relatedwork.tex}
+
+\input{chapters/analysis/analysis.tex}
+
+\input{chapters/project-management/project-management.tex}
+
+\input{chapters/design/design.tex}
+
+\input{chapters/implementation/implementation.tex}
+
+\input{chapters/testing/testing.tex}
+
+\input{chapters/evaluation/evaluation.tex}
+
+\input{chapters/extensions/extensions.tex}
+\clearpage
+
+
+
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{references/refbiblatex}
+
+\clearpage
+
+\addappheadtotoc
+\appendix
+
+\addcontentsline{toc}{section}{Appendix A. System Classified Tweets}
+\input{chapters/appendices/classified_tweets/classified-tweets.tex}
+
+\addcontentsline{toc}{section}{Appendix B. File Structure}
+\addcontentsline{toc}{section}{Appendix C. System Usage}
+\clearpage
+
+\input{chapters/appendices/file_structure_and_usage/file-struct-sys-usage.tex}
+
+
+\end{document}

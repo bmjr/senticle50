@@ -1,0 +1,54 @@
+\BOOKMARK [0][-]{chapter*.1}{Preamble}{}% 1
+\BOOKMARK [1][-]{section*.2}{Abstract}{chapter*.1}% 2
+\BOOKMARK [1][-]{section*.2}{Git Repository}{chapter*.1}% 3
+\BOOKMARK [1][-]{section*.2}{Acknowledgements}{chapter*.1}% 4
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
+\BOOKMARK [1][-]{section.1.1}{Problem}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Context}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{Overview}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Related Work}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Sentiment Analysis Background}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Sentiment Analysis on Twitter}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Sentiment Analysis of Political Discourse on Twitter}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Analysis}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Requirements Elicitation}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Specification}{chapter.3}% 15
+\BOOKMARK [0][-]{chapter.4}{Project Management}{}% 16
+\BOOKMARK [1][-]{section.4.1}{Development Methodology}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{Risk Analysis}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.3}{Progress}{chapter.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Design}{}% 20
+\BOOKMARK [1][-]{section.5.1}{Design Methodology}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{System Architecture}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.3}{Classifier Architecture}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.4}{Database Schema}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.5}{Design Patterns}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.6}{Models}{chapter.5}% 26
+\BOOKMARK [2][-]{subsection.5.6.1}{Naive Brexit Stance Model}{section.5.6}% 27
+\BOOKMARK [2][-]{subsection.5.6.2}{Sentiment Model}{section.5.6}% 28
+\BOOKMARK [2][-]{subsection.5.6.3}{Brexit Stance Model}{section.5.6}% 29
+\BOOKMARK [1][-]{section.5.7}{System Pipeline}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.8}{Constraint Resolution}{chapter.5}% 31
+\BOOKMARK [0][-]{chapter.6}{Implementation}{}% 32
+\BOOKMARK [1][-]{section.6.1}{Software Stack Selection}{chapter.6}% 33
+\BOOKMARK [2][-]{subsection.6.1.1}{Programming Language}{section.6.1}% 34
+\BOOKMARK [2][-]{subsection.6.1.2}{Framework}{section.6.1}% 35
+\BOOKMARK [1][-]{section.6.2}{System Architecture}{chapter.6}% 36
+\BOOKMARK [2][-]{subsection.6.2.1}{Applications}{section.6.2}% 37
+\BOOKMARK [2][-]{subsection.6.2.2}{Dependency Injection}{section.6.2}% 38
+\BOOKMARK [1][-]{section.6.3}{Database Implementation}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.4}{System Features}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.5}{Deployment}{chapter.6}% 41
+\BOOKMARK [0][-]{chapter.7}{Experiments and Testing}{}% 42
+\BOOKMARK [1][-]{section.7.1}{Tweet Collection Experiment}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.2}{Testing Methodologies}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.3}{Testing Strategy}{chapter.7}% 45
+\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 46
+\BOOKMARK [1][-]{section.8.1}{Findings}{chapter.8}% 47
+\BOOKMARK [1][-]{section.8.2}{Future Work}{chapter.8}% 48
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 49
+\BOOKMARK [0][-]{chapter.9}{Bibliography}{}% 50
+\BOOKMARK [0][-]{section*.11}{Appendices}{}% 51
+\BOOKMARK [1][-]{section*.12}{Appendix A. System Classified Tweets}{section*.11}% 52
+\BOOKMARK [1][-]{section*.12}{Appendix B. File Structure}{section*.11}% 53
+\BOOKMARK [1][-]{section*.12}{Appendix C. System Usage}{section*.11}% 54

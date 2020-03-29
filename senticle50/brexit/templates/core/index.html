@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Senticle50</title>
+    {% load staticfiles%}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png"
+          href="{% static 'core/images/favicon.ico' %}"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'core/css/generic.css' %}"/>
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+<header class="masthead">
+    <nav class="navbar navbar-toggleable-md navbar-expand-md navbar-dark navbar-static-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'core:home' %}">Senticle50</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li
+                            class="nav-item {% if nav_page == 'home' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'core:home' %}">
+                            Home</a>
+                    </li>
+                    <li class="nav-item {% if nav_page == 'analysis' %}active{% endif %}">
+                        <a class="nav-link"
+                           href="{% url 'classifiers:analysis' %}">Analysis</a>
+                    </li>
+                    <li class="nav-item {% if nav_page == 'data' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'scraper:data' %}">Data
+                        </a>
+                    </li>
+                    <li class="nav-item {% if nav_page == 'about' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'core:about' %}">About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+
+    <!-- Site Main -->
+    <main role="main">
+        {% block body %}
+        {% endblock %}
+    </main>
+</div>
+<div class="container">
+    <!-- Site Footer -->
+    <footer class="footer">
+        <p>&copy; Senticle50; made with love, hate and all things
+            sentiment.</p>
+    </footer>
+</div>
+</body>
+</html>

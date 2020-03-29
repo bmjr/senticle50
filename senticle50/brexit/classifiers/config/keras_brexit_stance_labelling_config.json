@@ -1,0 +1,24 @@
+{
+  "name":"Brexit Stance Labelling Config",
+  "classifier_name": "KerasClassifier",
+  "tweet_type": "tokenized",
+  "model": {
+    "model_json": "brexit_stance_keras_model.json",
+    "model_weights_json": "brexit_stance_keras_weights.h5",
+    "tokenizer_pickle": "brexit_stance_tokenizer.pickle"
+  },
+  "classification_type": 5,
+  "labels": [
+    {
+      "name": "Remain",
+      "classification_value": 0
+    },
+    {
+      "name": "Leave",
+      "classification_value": 1
+    }
+  ],
+  "is_training": 0,
+  "order_of_application": 0,
+  "is_real_time": 1
+}

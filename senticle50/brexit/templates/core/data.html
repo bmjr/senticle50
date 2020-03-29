@@ -1,0 +1,50 @@
+{% extends 'core/index.html' %}
+{% load static from staticfiles %}
+{% block styles %}
+<link rel="stylesheet" type="text/css"
+          href="{% static 'core/css/data.css' %}"/>
+{% endblock %}
+{% block body %}
+<div class="jumbotron">
+    <div><h2>DATA</h2></div>
+</div>
+<div class="container-fluid">
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th style="width: 20%">Username</th>
+      <th style="width: 50%">Tweet</th>
+      <th style="width: 10%">Date</th>
+      <th style="width: 10%">Retweets</th>
+      <th style="width: 10%">Favourites</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for tweet in tweets %}
+    <tr>
+        <td>{{tweet.username}}</td>
+        <td style="text-align:left;">{{tweet.text}}</td>
+        <td>{{tweet.date|date:"d/m/Y H:i"}}</td>
+        <td>{{tweet.retweets}}</td>
+        <td>{{tweet.favorites}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <br>
+    {% if next_page_link %}
+    <a href="{{next_page_link}}" class="btn btn-outline-primary float-right">Next</a>
+    {% else %}
+    <a class="btn btn-outline-primary float-right">Next</a>
+    {% endif %}
+    {% if prev_page_link %}
+    <a href="{{prev_page_link}}" class="btn btn-outline-primary float-left">Previous</a>
+    {% else %}
+    <a class="btn btn-outline-primary disabled">Previous</a>
+    {% endif %}
+</div>
+<br>
+
+
+
+{% endblock %}

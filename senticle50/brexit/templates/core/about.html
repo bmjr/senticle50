@@ -1,0 +1,103 @@
+{% extends 'core/index.html' %}
+{% load static from staticfiles %}
+{% block styles %}
+<link rel="stylesheet" type="text/css"
+      href="{% static 'multiple.js/multiple.css' %}"/>
+
+<script src="{% static 'multiple.js/multiple.js' %}"></script>
+
+<style>
+    a {
+        color: darkblue;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+    <div><h2>ABOUT</h2>
+    <br>
+</div>
+<div class="data-cards">
+    <div class="card-columns">
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0 card-body">
+                    <h5 class="card-title">Tweet Retrieval</h5>
+                    <p>All historic tweets within the site's dataset have been gathered
+                        using
+                        <strong>GetOldTweets-python</strong> tweet scraping
+                        api.</p>
+                    <br>
+                    <p>Find out more on <a
+                            href="https://github.com/Jefferson-Henrique/GetOldTweets-python">GitHub</a>
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0 card-body">
+                    <h5 class="card-title">Data Rights</h5>
+                    <p>All tweets are sourced directly from the public Twitter
+                        timeline feed in accordance
+                        with Twitter's <a
+                                href="https://twitter.com/en/tos#usContent">terms
+                            of service</a>.</p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0 card-body">
+                    <h5 class="card-title">What is Sentiment Analysis?</h5>
+                    <p><em>To
+                        <ins>extrapolate opinion</ins>
+                        from a piece of text or corpora of texts is said to be
+                        the extraction of "Sentiment".</em></p>
+                    <p>Sentiment can be around an emotion or regarding an
+                        entity, within Senticle50's analysis of the brexit
+                        debate both aspects are analysed.</p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card middle">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0 card-body">
+                    <h5 class="card-title">Tweet Classification</h5>
+                    <p class="card-text">All tweets within the dataset have
+                        undergone classification against:</p>
+                    <ul>
+                        <li>Sentiment</li>
+                        <li>Stance on Brexit</li>
+                        <li>Stance on Brexit (Inclusive of Sentiment)</li>
+                    </ul>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0 card-body">
+                    <h5 class="card-title">Neural Network Analysis</h5>
+                    <p class="card-text">The Neural Networks used in this project utilised <a
+                            href="https://keras.io/">Keras</a> API</p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0 card-body">
+                    <h5 class="card-title">Real Time</h5>
+                    <p class="card-text">Tweets are collected, tokenized, analysed and visualised within real time</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var multiple = new Multiple({
+        selector: '.card',
+        background: 'linear-gradient(to right, #36d1dc, #5b86e5)'
+    });
+</script>
+{% endblock %}

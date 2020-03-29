@@ -1,0 +1,517 @@
+{% extends 'core/index.html' %}
+{% load  staticfiles%}
+{% load app_filters %}
+{% load app_tags %}
+{% block styles %}
+<link rel="stylesheet" type="text/css"
+          href="{% static 'font-awesome/css/font-awesome.min.css' %}"/>
+<style>
+    .tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 2px;
+        background: #36d1dc;
+        background: -webkit-linear-gradient(to right, #36d1dc, #5b86e5);
+        background: linear-gradient(to right, #36d1dc, #5b86e5);
+        color:white;
+        padding: 5px;
+        border: 0.5px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: black;
+        pointer-events: none;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<script src="http://d3js.org/d3.v3.js"></script>
+<div>
+    <h1 class="text-center">{{title}}</h1>
+    <h3 class="text-center">Classifier Analysis</h3>
+</div>
+<br>
+<br>
+<div class="row justify-content-center align-items-center">
+    <div class="btn-group">
+        <a role="button"
+           class="btn btn-primary {% if selected == 'day' %}active{% endif %}"
+           href="{{time_switcher.day}}">Day</a>
+        <a role="button"
+           class="btn btn-primary {% if selected == 'week' %}active{% endif %}"
+           href="{{time_switcher.week}}">Week</a>
+        <a role="button"
+           class="btn btn-primary {% if selected == 'month' %}active{% endif %}"
+           href="{{time_switcher.month}}">Month</a>
+        <a role="button"
+           class="btn btn-primary {% if selected == 'year' %}active{% endif %}"
+           href="{{time_switcher.year}}">Year</a>
+    </div>
+</div>
+<br>
+<div class="row justify-content-center align-items-center">
+    <div class="col-sm-2 text-center">
+        {% if time_switcher.prev_time_period %}
+        <a class="btn btn-primary" role="button"
+           href="{% query_replace request.get_raw_uri 'time_period' time_switcher.prev_time_period %}">prev
+            {{selected}}</a>
+        {% else %}
+        <a class="btn btn-primary disabled" role="button">prev {{selected}}</a>
+        {% endif %}
+    </div>
+    <div class="col-sm-2 text-center">
+        {{time_switcher.title}}
+    </div>
+    <div class="col-sm-2 text-center">
+        {% if time_switcher.next_time_period %}
+        <a class="btn btn-primary" role="button"
+           href="{% query_replace request.get_raw_uri 'time_period' time_switcher.next_time_period %}">next
+            {{selected}}</a>
+        {% else %}
+        <a class="btn btn-primary disabled" role="button">next
+            {{selected}}</a>
+        {% endif %}
+    </div>
+</div>
+<br>
+{% if classifications_exist %}
+<div class="row ">
+    <div class="col-sm-12 text-center">
+        <div id="area2"></div>
+    </div>
+</div>
+<br>
+{% if selected != 'day' %}
+<h3 class="text-center">TWEETS</h3>
+<br/>
+<div class="row">
+    <div class="col-sm-6 text-center">
+        <h5>All Tweets</h5>
+        <div id="area1"></div>
+    </div>
+    <div class="col-sm-6 text-center">
+        <h5>Classifications</h5>
+        <div id="area5"></div>
+    </div>
+</div>
+<div class="container d-flex justify-content-center text-center align-items-center">
+    <div id="tweets" style="height:100%;">
+        <div class="row justify-content-center">
+            <span class="fa fa-spinner fa-spin" style="font-size:24px"></span>
+        </div>
+        <div class="row">
+            <span>Loading Tweets</span>
+        </div>
+    </div>
+</div>
+<br><br>
+{% if selected == 'week' %}
+</div>
+{% endif %}
+<h3 class="text-center">{{classifier_summary.granularity | upper}}</h3>
+{% for row in item_rows %}
+{% with row|row_size as columns %}
+<div class="row justify-content-center">
+    {% for item in row %}
+    <div class="col-sm-{{columns}} text-center" style="min-width:12.5%;" href="{{item.link}}">
+        {% if item.classifications %}
+        <a href="{{item.link}}">
+            {{item.text}}
+            <br/>
+            <div id="chart-{{item.text | cut:' ' | cut:'/'}}"></div>
+        </a>
+        {% else %}
+        {{item.text}}
+        <br/>
+        <div id="chart-{{item.text | cut:' ' | cut:'/'}}">Unclassified</div>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+    <br>
+</div>
+{% endwith %}
+{% endfor %}
+{% else %}
+<div class="container d-flex justify-content-center text-center align-items-center">
+    <div id="tweets" style="height:100%;">
+        <div class="row justify-content-center">
+            <span class="fa fa-spinner fa-spin" style="font-size:24px"></span>
+        </div>
+        <div class="row">
+            <span>Loading Tweets</span>
+        </div>
+    </div>
+</div>
+{% endif %}
+<br>
+
+{% if selected != 'day' %}
+<script>
+    var margin = {top: 20, right: 0, bottom: 100, left: 100},
+        width = parseInt(d3.select("#area1").style("width"), 10) - margin.left - margin.right,
+        height = parseInt(d3.select("#area1").style("width"), 10) - margin.top - margin.bottom;
+    var parseDate = d3.time.format("%d/%m/%Y").parse; // for dates like "2014-01-01"
+    var parseToolTip = d3.time.format({{classifier_summary.tick_granularity | safe}});
+    //var parseDate = d3.time.format("%Y-%m-%dT00:00:00").parse;  // for dates like "2014-01-01T00:00:00Z"
+    var data = {{total_tweets | safe}};
+
+    //Draw graph and axis
+    var barWidth = width / data.length;
+    var x = d3.time.scale()
+        .range([0, width - barWidth]);
+    var y = d3.scale.linear()
+        .range([height, 0]);
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .ticks(d3.time.{{classifier_summary.granularity}})
+    .tickSize(16, 10)
+        .tickFormat(d3.time.format({{classifier_summary.tick_granularity | safe}}));
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
+    var line = d3.svg.line()
+        .x(function (d) {
+            return x(parseDate(d.date));
+        })
+        .y(function (d) {
+            return y(d.tweet_number);
+        });
+    var svg = d3.select("#area1").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    x.domain(d3.extent(data, function (d) {
+        return parseDate(d.date);
+    }));
+    y.domain([0, d3.max(data, function (d) {
+        return d.tweet_number;
+    })]);
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Tweet count");
+
+    //Add Main Tweet Count line
+    svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("d", line)
+        .attr("stroke", 'black');
+
+    // Add Tooltip for main tweet line
+    var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+    svg.selectAll(".shapes")
+        .data(data)
+        .enter().append("rect")
+        .attr("x", function (d) {
+            return x(parseDate(d.date)) - 2.5;
+        })
+        .attr("y", function (d) {
+            return y(d.tweet_number) - 2.5;
+        })
+        .attr("width", 7)
+        .attr("height", 7)
+        .on("mouseover", function (d) {
+            tooltip.transition()
+                .duration(100)
+                .style("opacity", .9)
+                .style("background", 'black');
+            tooltip.html(parseToolTip(parseDate(d.date)) + "<br>" + "Tweets: " + d.tweet_number)
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY) + "px");
+        })
+        .on("mouseout", function (d) {
+            tooltip.transition()
+                .duration(300)
+                .style("opacity", 0);
+        });
+</script>
+<script>
+    var margin = {top: 20, right: 0, bottom: 100, left: 100},
+        width = parseInt(d3.select("#area5").style("width"), 10) - margin.left - margin.right,
+        height = parseInt(d3.select("#area5").style("width"), 10) - margin.top - margin.bottom;
+    var parseDate = d3.time.format("%d/%m/%Y").parse; // for dates like "2014-01-01"
+    var parseToolTip = d3.time.format({{classifier_summary.tick_granularity | safe}});
+    //var parseDate = d3.time.format("%Y-%m-%dT00:00:00").parse;  // for dates like "2014-01-01T00:00:00Z"
+
+    var data = [];
+    {% for key, value in classification_counts.items %}
+        console.log({{value | safe}});
+        data = data.concat({{value | safe}});
+    {% endfor %}
+
+    //Draw graph and axis
+    var x = d3.time.scale()
+        .range([0, width - barWidth]);
+    var y = d3.scale.linear()
+        .range([height, 0]);
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .ticks(d3.time.{{classifier_summary.granularity}})
+    .tickSize(16, 10)
+        .tickFormat(d3.time.format({{classifier_summary.tick_granularity | safe}}));
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
+    var line = d3.svg.line()
+        .x(function (d) {
+            return x(parseDate(d.date));
+        })
+        .y(function (d) {
+            return y(d.tweet_number);
+        });
+    var svg = d3.select("#area5").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    x.domain(d3.extent(data, function (d) {
+        return parseDate(d.date);
+    }));
+    y.domain([0, d3.max(data, function (d) {
+        return d.tweet_number;
+    })]);
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Tweet count");
+
+    //Add classification lines and tool tips for lines.
+    {% for key, value in classification_counts.items %}
+        svg.append("path")
+        .datum({{value | safe}})
+        .attr("fill", "none")
+        .attr("d", line)
+        .attr("stroke", '{{classification_colors|dictionary_lookup:key}}');
+
+        svg.selectAll(".shapes")
+            .data({{value | safe}})
+            .enter().append("rect")
+            .attr("x", function (d) {
+                return x(parseDate(d.date)) - 2.5;
+            })
+            .attr("y", function (d) {
+                return y(d.tweet_number) - 2.5;
+            })
+            .attr("width", 7)
+            .attr("height", 7)
+            .attr("fill", '{{classification_colors|dictionary_lookup:key}}')
+            .on("mouseover", function (d) {
+                tooltip.transition()
+                    .duration(100)
+                    .style("opacity", .9)
+                    .style("background", '{{classification_colors|dictionary_lookup:key}}');
+                tooltip.html(parseToolTip(parseDate(d.date)) + "<br>" + "Tweets: " + d.tweet_number)
+                    .style("left", (d3.event.pageX + 10) + "px")
+                    .style("top", (d3.event.pageY) + "px");
+            })
+            .on("mouseout", function (d) {
+                tooltip.transition()
+                    .duration(300)
+                    .style("opacity", 0);
+            });
+    {% endfor %}
+</script>
+{% endif %}
+
+<script>
+    data = {{classifier_summary.classifications | safe}};
+    remainColour = d3.color("red");
+    leaveColour = d3.color("blue");
+
+    width = parseInt(d3.select("#area2").style("width"), 10) / 2.5;
+    height = width;
+
+
+    var vis = d3.select("#area2")
+        .append("svg:svg")
+        .data([data])
+        .attr("width", width)
+        .attr("height", height)
+        .append("svg:g")
+        .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
+
+    var arc = d3.svg.arc()
+        .outerRadius((width / 2));
+
+    var pie = d3.layout.pie()
+        .value(function (d) {
+            return d.value;
+        });
+
+    var arcs = vis.selectAll("g.slice")
+        .data(pie)
+        .enter()
+        .append("svg:g")
+        .attr("class", "slice");
+
+    arcs.append("svg:path")
+        .attr("fill", function (d, i) {
+            color_dictionary = {{classification_colors|safe}}
+            return d3.rgb(color_dictionary[data[i].label]);
+        })
+        .attr("d", arc);
+
+    arcs.append("svg:text")
+        .attr("transform", function (d) {
+
+            d.innerRadius = 0;
+            d.outerRadius = 100;
+            return "translate(" + arc.centroid(d) + ")";
+        })
+        .attr("text-anchor", "middle")
+        .attr("dy", "0em")
+        .text(function (d, i) {
+            return data[i].label;
+        })
+        .style("fill", 'white');
+
+    arcs.append("svg:text")
+        .attr("transform", function (d) {
+
+            d.innerRadius = 0;
+            d.outerRadius = 100;
+            return "translate(" + arc.centroid(d) + ")";
+        })
+        .attr("text-anchor", "middle")
+        .attr("dy", "1.25em")
+        .text(function (d, i) {
+            return '(' + data[i].value + ')';
+        })
+        .style("fill", 'white');
+</script>
+<script>
+    var rows = {{item_rows | safe}};
+    for (i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        for (j = 0; j < row.length; j++) {
+            id = row[j].text.replace(/\s/g, "");
+            id = id.replace(/\//g, "");
+            data = row[j].classifications;
+            if (data.length > 0) {
+                width = parseInt(d3.select("#chart-" + id).style("width"), 10);
+                height = width;
+
+
+                var vis = d3.select("#chart-" + id)
+                    .append("svg:svg")
+                    .data([data])
+                    .attr("width", width)
+                    .attr("height", height)
+                    .append("svg:g")
+                    .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
+
+
+                var arc = d3.svg.arc()
+                    .outerRadius((width / 2));
+
+                var pie = d3.layout.pie()
+                    .value(function (d) {
+                        return d.value;
+                    });
+
+                var arcs = vis.selectAll("g.slice")
+                    .data(pie)
+                    .enter()
+                    .append("svg:g")
+                    .attr("class", "slice");
+
+                arcs.append("svg:path")
+                    .attr("fill", function (d, i) {
+                        color_dictionary = {{classification_colors|safe}}
+                        return d3.rgb(color_dictionary[data[i].label]);
+                    })
+                    .attr("d", arc);
+
+                arcs.append("svg:text")
+                    .attr("transform", function (d) {
+
+                        d.innerRadius = 0;
+                        d.outerRadius = 100;
+                        return "translate(" + arc.centroid(d) + ")";
+                    })
+                    .attr("text-anchor", "middle")
+                    .attr("dy", "0em")
+                    .text(function (d, i) {
+                        return data[i].label;
+                    })
+                    .style("fill", 'white');
+
+                arcs.append("svg:text")
+                    .attr("transform", function (d) {
+
+                        d.innerRadius = 0;
+                        d.outerRadius = 100;
+                        return "translate(" + arc.centroid(d) + ")";
+                    })
+                    .attr("text-anchor", "middle")
+                    .attr("dy", "1.25em")
+                    .text(function (d, i) {
+                        return '(' + data[i].value + ')';
+                    })
+                    .style("fill", 'white');
+            } else {
+                width = parseInt(d3.select("#chart-" + id).style("width"), 10);
+                height = width;
+
+
+                var vis = d3.select("#chart-" + id)
+                    .append("svg:svg")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .append("svg:g")
+                    .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
+            }
+        }
+    }
+</script>
+{% else %}
+<br>
+<h3 class="text-center">No Classifications</h3>
+{% endif %}
+<script>
+        d3.json("{% url 'classifiers:top_tweets' %}?classification_type_id={{top_tweet_parameters.classification_type_id}}&start_date={{top_tweet_parameters.start_date}}&end_date={{top_tweet_parameters.end_date}}", function (error, data) {
+            var color_dictionary = {{classification_colors | safe}}
+            var table_html = '<table class="table">\n' +
+                '  <thead>\n' +
+                '    <tr>\n' +
+                '      <th scope="col" class="text-center">Top Classified Tweets</th>\n' +
+                '    </tr>\n' +
+                '  </thead>\n' +
+                '  <tbody>';
+            var tweets = document.getElementById('tweets');
+
+            for (var i = 0; i < data.length; i++) {
+                var color = color_dictionary[data[i].classification_type__label__name];
+                table_html += '<tr style="color:white;background-color:' + color + ';opacity:0.9;"><td >' + data[i].tweet_id__text + '</td>'
+            }
+
+            tweets.innerHTML = '<table>' + table_html + '</tbody></table>';
+        });
+    </script>
+{% endblock %}

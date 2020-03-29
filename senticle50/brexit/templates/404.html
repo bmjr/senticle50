@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Senticle50</title>
+    {% load staticfiles%}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png"
+          href="{% static 'core/images/favicon.ico' %}"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'core/generic.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'font-awesome/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}"/>
+</head>
+<body id="not-found">
+<div class="container text-center">
+    <div class="jumbotron">
+        <main role="main">
+            <h1>Senticle50 (Error #404)</h1>
+            <br>
+            <i class="fa fa-chain-broken"></i>
+            <h2>Oops the page you requested could not be found.</h2>
+            <br>
+            <a class="btn btn-primary" href="{% url 'core:home' %}">
+                Return Home</a>
+        </main>
+    </div>
+</div>
+</body>
+</html>

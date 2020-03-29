@@ -1,0 +1,132 @@
+\documentclass[11pt]{report}
+\usepackage{standalone}
+\graphicspath{ {images/} }
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\usepackage{natbib}
+\bibliographystyle{agsm}
+\usepackage{etoolbox}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.25em}
+\usepackage[raggedright]{titlesec}
+\usepackage{hyperref}
+\usepackage{capt-of}
+\patchcmd{\bibliography}{\section*}{\section}{}{}
+\titlespacing*{\chapter}{0pt}{-40pt}{10pt}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter}{15pt}{}
+\usepackage{rotating}
+\usepackage[titletoc]{appendix}
+\usepackage{pgfgantt}
+\usepackage{graphicx, rotating, caption, lscape, threeparttable}% \usepackage{amsmath}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+
+
+
+\bibliographystyle{agsm}
+
+
+\begin{document}
+\chapter{Project Management}
+\section{Development Methodology}
+The project will take a sequential approach to the development process utilizing the waterfall model whose origins come from the seven stages of development conceived by \cite{RoyceManagingDevelopmentLarge1987}. The Waterfall model will ensure the project traverses through the software development lifecycle sequentially however as a contingency measure the model will be practised with feedback loops to ``go backwards in the software development lifecycle'' if the project requires it. The waterfall model which is suited to milestone-driven development will complement the project's timescale (see Figure \ref{fig:gantt}) and encourage the project to be structurally well designed before proceeding onto implementation phase of the development.
+
+\section{Risk Analysis}
+Throughout the project there are some risks which the development and progress of the project can be susceptible to. These risks should be dealt with correctly, and therefore a risk analysis plan has been documented as part of the planning within the project, Table \ref{table:risk-analysis} documents the main risks for which the project must plan against.
+
+\section{Progress}
+To ensure the project progresses and the system is delivered in full (all the identified requirements satisfied) the project milestones have been planned meticulously against the time available from inception to the completion of the project. Within the project timescale; weekly meetings with the project supervisor will occur to verify the project execution is on track and correct. An overview of the intended project timescale is covered within Figure \ref{fig:gantt}.
+
+\clearpage
+
+\newgeometry{a4paper,left=1in,right=1in,top=1in,bottom=1in,nohead}
+\begin{landscape}
+\begin{tabular}{ |>{\raggedright\arraybackslash}p{3cm}||p{3cm}|>{\raggedright\arraybackslash}p{5cm}|p{3cm}|>{\raggedright\arraybackslash}p{5cm}|  }
+ \hline
+ Risk & Likelihood & Effect & Strategy Type & Strategy Actions\\
+  \hline
+   Insufficient resources available & Highly likely & Progress is halted until resources available. & Avoidance & Where possible avoid resource intensive approaches i.e. complex infrastructure. \newline \newline Explore all possible approaches to resource intensive problems to ensure the most efficient approach for the available resources is chosen.\\
+ \hline
+ Complexity of Technology & Fairly likely & Slow down progress & Minimization & Avoid going too in-depth within complexities of technologies
+ \newline \newline Read technology documentation where progress has slowed\\
+  \hline
+ Inadequate estimation of project timing & Unlikely & Reduce time available for remaining tasks & Contingency Plan & Re-adjust project timescale to ensure milestones have sufficient time to be met\\
+  \hline
+ Incorrect system requirements & Unlikely & Progress is halted until requirements are corrected & Contingency Plan & Reformulate requirements to ensure they are reflective of new observations. \\
+ \hline
+ Requirements Inflation & Unlikely & The quantitative amount of work required has increased & Minimization & Ensure the scope of each task is well defined \\
+ \hline
+\end{tabular}
+\centering \captionof{table}{Project Risk Analysis Plan}
+\label{table:risk-analysis}
+\end{landscape}
+\restoregeometry % Restore the global document page margins
+
+
+\begin{center}
+\resizebox{\textwidth}{!}{
+\centering \begin{ganttchart}[
+    canvas/.append style={fill=none, draw=black!5, line width=.75pt},
+    hgrid style/.style={draw=black!5, line width=.75pt},
+    vgrid={*1{draw=black!5, line width=.75pt}},
+    title/.style={draw=none, fill=none},
+    title label font=\bfseries\footnotesize,
+    title label node/.append style={below=7pt},
+    include title in canvas=false,
+    bar label font=\mdseries\small\color{black!70},
+    bar label node/.append style={left=0.5cm},
+    bar/.append style={draw=none, fill=black!63},
+    bar progress label font=\mdseries\footnotesize\color{black!70},
+    group left shift=0,
+    group right shift=0,
+    group height=.5,
+    group peaks tip position=0,
+    group label node/.append style={left=.6cm},
+    group progress label font=\bfseries\small,
+    link/.style={-latex, line width=1.5pt, linkred},
+    link label font=\scriptsize\bfseries,
+    link label node/.append style={below left=-2pt and 0pt}
+  ]{1}{25}
+  \gantttitle[
+    title label node/.append style={below left=7pt and -3pt}
+  ]{WEEKS:\quad1}{1}
+  \gantttitlelist{2,...,25}{1} \\
+  \ganttgroup[]{1. Planning and Analysis}{1}{8} \\
+  \ganttbar[
+    name=1A
+  ]{\textbf{1.1} Research Existing Systems/Resources}{1}{3} \\
+  \ganttbar[
+    name=1B
+  ]{\textbf{1.2} Gather Requirements}{1}{3} \\
+  \ganttbar[
+    name=1C
+  ]{\textbf{1.3} Project Proposal}{2}{4} \\
+ \ganttbar[
+    name=1D
+  ]{\textbf{1.4} Literature Review}{4}{7} \\
+  \ganttgroup[]{2. Design}{6}{8} \\
+  \ganttbar[]{\textbf{2.1} System Architecture}{6}{8} \\
+  \ganttbar[]{\textbf{2.2} User Centered Design}{7}{8} \\
+  \ganttbar[]{\textbf{2.3} Gather Resources }{7}{8} \\
+  \ganttgroup[]{3. Implementation}{9}{19} \\
+  \ganttbar[]{\textbf{3.1} Gather Dataset}{9}{11} \\
+  \ganttbar[]{\textbf{3.2} Backend}{9}{17} \\
+  \ganttbar[]{\textbf{3.2} Frontend}{15}{19} \\
+  \ganttgroup[]{4. Testing}{9}{20} \\
+  \ganttbar[]{\textbf{4.1} Unit/Integration/E2E}{9}{19} \\
+  \ganttbar[]{\textbf{4.2} User Acceptance}{19}{20} \\
+  \ganttbar[]{\textbf{4.3} System Performance}{19}{20} \\
+  \ganttgroup[]{5. Evaluation}{20}{25} \\
+  \ganttbar[]{\textbf{5.1} Formulate Findings}{20}{22} \\
+  \ganttbar[]{\textbf{5.2} System Performance}{22}{23} \\
+  \ganttbar[]{\textbf{5.2} Report Writing}{20}{25} \\
+\end{ganttchart}
+}
+\captionof{figure}{Gantt chart of project life cycle.}
+\label{fig:gantt}
+\end{center}
+
+\end{document}

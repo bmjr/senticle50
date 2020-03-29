@@ -1,0 +1,1 @@
+cd /webapps/senticle50/brexit && python-virtualenv/bin/python manage.py ClassifyRealTime --settings=brexit.settings.production

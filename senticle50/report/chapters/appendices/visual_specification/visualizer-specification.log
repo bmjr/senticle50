@@ -1,0 +1,107 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.3)  25 MAR 2018 17:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**visualizer-specification.tex
+(./visualizer-specification.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(./visualizer-specification.aux)
+\openout1 = `visualizer-specification.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [1
+
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [2]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Overfull \hbox (25.68382pt too wide) in paragraph at lines 51--52
+[]\OT1/cmr/m/n/10.95 REQ-3: The Sys-tem must dis-play Brexit stance clas-si-fi-
+ca-tions in day/week/month
+ []
+
+[3]
+Overfull \hbox (49.5609pt too wide) in paragraph at lines 63--64
+[]\OT1/cmr/m/n/10.95 REQ-3: The Sys-tem must dis-play sen-ti-ment po-lar-ity cl
+as-si-fi-ca-tions in day/week/month
+ []
+
+[4]
+Overfull \hbox (5.34293pt too wide) in paragraph at lines 82--83
+[]\OT1/cmr/m/n/10.95 REQ-2: The Sys-tem must re-spond to HTTP Re-quests within 
+5 sec-onds. 
+ []
+
+
+Overfull \hbox (2.64818pt too wide) in paragraph at lines 90--91
+\OT1/cmr/m/n/10.95 REQ-1: The Sys-tem must work across com-mon browsers e.g. Sa
+-fari, Chrome,
+ []
+
+[5] [6] (./visualizer-specification.aux) ) 
+Here is how much of TeX's memory you used:
+ 237 strings out of 492995
+ 2876 string characters out of 6132704
+ 57074 words of memory out of 5000000
+ 3869 multiletter control sequences out of 15000+600000
+ 5458 words of font info for 20 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 21i,5n,19p,743b,107s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on visualizer-specification.pdf (6 pages, 58321 bytes).
+PDF statistics:
+ 35 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

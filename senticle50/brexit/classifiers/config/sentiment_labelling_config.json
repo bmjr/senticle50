@@ -1,0 +1,20 @@
+{
+  "name":"Sentiment Labelling Config",
+  "classifier_name": "StringContainsClassifier",
+  "model": "re",
+  "tweet_type": "unprocessed",
+  "classification_type": 6,
+  "labels": [
+    {
+      "name": "Positive",
+      "classification_value": 0,
+      "strings_to_match": [":)", ":-)", ": )", ":D", "=)"]
+    },
+    {
+      "name": "Negative",
+      "classification_value": 1,
+      "strings_to_match": [":(", ":-(", ": ("]
+    }
+  ],
+  "is_training": 1
+}

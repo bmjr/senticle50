@@ -1,0 +1,1 @@
+classifier = ClassifierRegistry().get(config['classifier_name'])
