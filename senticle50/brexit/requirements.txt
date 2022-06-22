@@ -39,7 +39,7 @@ mccabe==0.6.1
 memory-profiler==0.50.0
 mockito==1.0.12
 nltk==3.2.5
-numpy==1.14.0
+numpy==1.22.0
 oauthlib==2.0.6
 pandas==0.22.0
 parso==0.1.1
